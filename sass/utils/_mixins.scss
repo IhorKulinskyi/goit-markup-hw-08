@@ -1,0 +1,10 @@
+@mixin centeredFlex($type: flex, $justify: center, $align: center) {
+  display: $type;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin titleTextStyle($size: 28px, $height: 1.17) {
+  font-size: $size;
+  line-height: $height;
+}

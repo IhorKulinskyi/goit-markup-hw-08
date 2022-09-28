@@ -1,0 +1,31 @@
+.logo {
+  @extend %link;
+
+  color: $primary-text-color;
+  font-family: $font-logo;
+  @include titleTextStyle($size: 24px, $height: 1.16);
+
+  &.footer__logo {
+    margin-bottom: 20px;
+    margin-right: 0;
+
+    color: $basic-white;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 90px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include titleTextStyle($size: 26px, $height: 1.2);
+    margin-right: 95px;
+  }
+}
+
+.logo__accent {
+  @media screen and (min-width: $desktop) {
+    @include titleTextStyle($size: 26px, $height: 1.2);
+  }
+
+  color: $accent-color;
+}

@@ -1,0 +1,82 @@
+.footer__mail-subscribe {
+  @media screen and (min-width: $tablet) and (max-width: $min-desktop) {
+    align-self: flex-end;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: auto;
+  }
+}
+
+.mail-form {
+  @media screen and (min-width: $desktop) {
+    @include centeredFlex($align: flex-end, $justify: none);
+  }
+}
+
+.mail-form__thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: $desktop) {
+    align-items: flex-start;
+
+    margin-right: 12px;
+  }
+}
+
+.mail-form__input {
+  width: 100%;
+  padding: 15px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+
+  color: $basic-white;
+
+  background-color: $accent-bgc;
+
+  &::placeholder {
+    @include titleTextStyle($size: 16px, $height: 1.25);
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
+    width: 360px;
+  }
+}
+
+.mail-form__icon {
+  margin-left: 10px;
+}
+
+.mail-form__button {
+  @extend %button;
+
+  @include centeredFlex;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px 28px;
+  min-width: max-content;
+  margin: 0 auto;
+
+  font-weight: 700;
+  @include titleTextStyle($size: 16px, $height: 1.88);
+  letter-spacing: 0.06em;
+
+  transition: background-color $transition-time $bezier-function;
+
+  &:focus,
+  &:hover {
+    background-color: $accent-button-color;
+  }
+}

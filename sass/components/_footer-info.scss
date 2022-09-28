@@ -1,0 +1,41 @@
+.footer__info {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 165px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 70px;
+    margin-bottom: 0;
+  }
+}
+
+.footer-contacts {
+  @extend %list;
+}
+
+.footer__address {
+  @include titleTextStyle($size: 14px, $height: 1.7);
+  color: $basic-white;
+  font-style: normal;
+}
+
+.footer-contacts__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-contacts__link {
+  @extend %link;
+
+  color: $footer-contacts-color;
+
+  @include titleTextStyle($size: 14px, $height: 1.7);
+
+  transition: color $transition-time $bezier-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}

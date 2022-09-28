@@ -1,0 +1,90 @@
+.customers {
+  @extend %section;
+
+  text-align: center;
+}
+
+.customers__title {
+  @extend %title;
+
+  @include titleTextStyle;
+
+  margin-bottom: 30px;
+
+  @media screen and (min-width: $desktop) {
+    @include titleTextStyle($size: 36px, $height: 1.16);
+
+    margin-bottom: 50px;
+  }
+}
+
+.customers__list {
+  @extend %list;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and(min-width:$desktop) {
+    flex-wrap: nowrap;
+  }
+}
+
+.customers__item {
+  @media screen and (max-width: $min-tablet) {
+    width: calc((100% - 30px) / 2);
+
+    &:not(:nth-child(2n)) {
+      margin-right: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $min-desktop) {
+    width: calc((100% - 60px) / 3);
+
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 3)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 150px) / 6);
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.customers__link {
+  @include centeredFlex;
+
+  box-sizing: border-box;
+  border: 1px solid $icon-color;
+  border-radius: 4px;
+  height: 92px;
+
+  transition: border $transition-time $bezier-function;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+  }
+}
+
+.customers__icon {
+  fill: $icon-color;
+  transition: fill $transition-time $bezier-function;
+
+  .customers__link:hover > &,
+  .customers__link:focus > & {
+    fill: $accent-color;
+  }
+}

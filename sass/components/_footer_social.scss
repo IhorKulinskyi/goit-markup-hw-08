@@ -1,0 +1,8 @@
+.footer__social-subscribe{
+    margin-bottom: 60px;
+
+    @media screen and(min-width: $desktop) {
+        margin-bottom: 0;
+        
+    }
+}

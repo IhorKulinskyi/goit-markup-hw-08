@@ -1,0 +1,55 @@
+.page {
+  margin: 0;
+
+  color: $primary-text-color;
+  background-color: $primary-bgc;
+  font-family: $font-stack;
+  letter-spacing: 0.03em;
+}
+
+body.modal-open , body.is-open{
+  overflow: hidden;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 95px;
+    padding-bottom: 95px;
+  }
+}
+
+.icon {
+  fill: $icon-color;
+}
+
+.hide-title {
+  display: none;
+}

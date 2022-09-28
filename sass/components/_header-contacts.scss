@@ -1,0 +1,93 @@
+.header-contacts {
+  @extend %list;
+
+  @media screen and (max-width: $min-tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    margin-bottom: 65px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.header-contacts__item {
+  &:last-child {
+    @media screen and (max-width: $min-tablet) {
+      margin-bottom: 30px;
+    }
+  }
+  &:first-child {
+    @media screen and (max-width: $min-desktop) {
+      margin-bottom: 10px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 50px;
+    }
+  }
+}
+
+.header-contacts__link {
+  @extend %link;
+
+  @include centeredFlex($justify: none);
+  @include titleTextStyle($size: 12px, $height: 1.16);
+
+  color: $secondary-text-color;
+  font-weight: 500;
+
+  transition: color $transition-time $bezier-function;
+
+  @media screen and (max-width: $min-tablet) {
+    @include titleTextStyle($size: 24px, $height: 1.16);
+
+    font-weight: 500;
+
+    color: $secondary-text-color;
+  }
+
+  .header-contacts__item:last-child > & {
+    @media screen and (max-width: $min-tablet) {
+      @include titleTextStyle($size: 34px, $height: 40px);
+
+      color: $accent-color;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include titleTextStyle($size: 14px, $height: 1.14);
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.header-contacts__icon {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: inline-block;
+
+    margin-right: 10px;
+    fill: $secondary-text-color;
+
+    transition: fill $transition-time $bezier-function;
+
+    .header-contacts__link:hover > &,
+    .header-contacts__link:focus > & {
+      fill: $accent-color;
+    }
+  }
+}

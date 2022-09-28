@@ -1,0 +1,68 @@
+.features {
+  @extend %section;
+
+  background-color: $basic-white;
+}
+
+.features__list {
+  @extend %list;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include centeredFlex($align: none);
+  }
+}
+
+.features__title {
+  @extend %title;
+
+  @include titleTextStyle($size: 14px, $height: 1.14);
+
+  margin-bottom: 10px;
+}
+
+.features__item {
+  width: 100%;
+
+  @media screen and (max-width: $min-tablet) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $min-desktop) {
+    width: calc((100% - 30px) / 2);
+
+    &:not(:nth-child(2n)) {
+      margin-right: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 90px) / 4);
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.features__description {
+  @extend %description;
+}
+
+.features__bg {
+  @include centeredFlex;
+  height: 120px;
+  background-color: $secondary-bgc;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}

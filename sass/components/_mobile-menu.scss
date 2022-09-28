@@ -1,0 +1,44 @@
+.mobile-menu__button {
+  @extend %button;
+
+  display: none;
+
+  margin-left: auto;
+  box-sizing: content-box;
+  height: 40px;
+
+  background-color: inherit;
+
+  padding: 10px 0 10px 0;
+
+  @media screen and (max-width: $min-tablet) {
+    display: block;
+  }
+}
+
+.menu-container {
+  display: none;
+  z-index: 1;
+
+  background-color: $basic-white;
+
+  &.is-open {
+    @include centeredFlex($justify: space-between, $align: none);
+    flex-direction: column;
+    flex-grow: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+
+    padding: 40px 50px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    @include centeredFlex($justify: space-between);
+    flex-grow: 1;
+  }
+}

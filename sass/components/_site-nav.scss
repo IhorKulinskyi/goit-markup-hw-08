@@ -1,0 +1,97 @@
+.site-nav {
+  @extend %list;
+
+  @media screen and (max-width: $min-tablet) {
+    display: block;
+
+    margin-bottom: auto;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.site-nav__item {
+  @media screen and (max-width: $min-tablet) {
+    &:not(:last-child) {
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    position: relative;
+
+    &--current {
+      position: relative;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateY(1.3px);
+        display: block;
+        width: 100%;
+        height: 4px;
+
+        background-color: $accent-color;
+        margin: 0;
+
+        border-radius: 2px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+}
+
+.site-nav__link {
+  @extend %link;
+
+  color: $primary-text-color;
+  font-weight: 500;
+  transition: color $transition-time $bezier-function;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &--current {
+    color: $accent-color;
+  }
+
+  @media screen and (max-width: $min-tablet) {
+    @include titleTextStyle($size: 40px, $height: 1.18);
+    letter-spacing: 0.02em;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    @include titleTextStyle($size: 14px, $height: 1.14);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateY(1.3px) scaleX(0);
+      display: block;
+      width: 100%;
+      height: 4px;
+
+      background-color: $accent-color;
+      margin: 0;
+
+      border-radius: 2px;
+
+      transition: transform $transition-time $bezier-function;
+    }
+    &:hover::after,
+    &:focus::after {
+      transform: translateY(1.3px) scaleX(1);
+    }
+  }
+}

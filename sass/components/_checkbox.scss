@@ -1,0 +1,35 @@
+.hide-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.checkbox {
+  @include centeredFlex;
+  
+  width: 16px;
+  height: 15px;
+
+  margin-right: 7px;
+
+  border: 2px solid $primary-text-color;
+  border-radius: 2px;
+
+  .hide-checkbox:focus + & {
+    border-color: $accent-color;
+  }
+  .hide-checkbox:checked ~ & {
+    border: 2px solid $accent-color;
+    background-color: $accent-color;
+    border-radius: 4px;
+  }
+}
+
+.checkbox__icon {
+  display: none;
+  scale: 1.5;
+
+  .hide-checkbox:checked ~ .checkbox > & {
+    display: block;
+  }
+}
