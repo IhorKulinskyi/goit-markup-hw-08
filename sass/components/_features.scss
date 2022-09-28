@@ -23,6 +23,10 @@
   @include titleTextStyle($size: 14px, $height: 1.14);
 
   margin-bottom: 10px;
+
+  @media screen and (max-width: $min-tablet) {
+    text-align: center;
+  }
 }
 
 .features__item {

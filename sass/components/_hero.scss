@@ -13,7 +13,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 120px 0;
+  padding: 118px 0;
   margin: 0 auto;
 
   background-color: $hero-reserve-bgc;
@@ -26,7 +26,7 @@
         rgba(47, 48, 58, 0.4),
         rgba(47, 48, 58, 0.4)
       ),
-      url(/images/overlay_mobile@2x.jpg);
+      url(../images/overlay_mobile@2x.jpg);
   }
 
   @media screen and (min-width: $tablet) {
@@ -43,7 +43,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       .hero {
-        background-image: url(/images/overlay_tablet@2x.jpg);
+        background-image: url(../images/overlay_tablet@2x.jpg);
       }
     }
   }
@@ -63,7 +63,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       .hero {
-        background-image: url(/images/overlay@2x.jpg);
+        background-image: url(../images/overlay@2x.jpg);
       }
     }
   }
